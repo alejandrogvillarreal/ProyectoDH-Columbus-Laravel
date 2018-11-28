@@ -1,0 +1,97 @@
+.slider_ale{
+  padding-right: 0px;
+  padding-left: 0px;
+}
+body{
+  background: linear-gradient(to bottom, #FFFFFF,#BFBCBC);
+  font-family: 'Roboto', sans-serif;
+}
+
+/*******************************************************************************/
+/*faq*/
+.card {
+  -moz-box-direction: normal;
+  -moz-box-orient: vertical;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom:1px;
+  border:none;
+}
+.card-header a{
+    width:97%;
+    float:left;
+    color:#565656;
+    text-decoration-line: none;
+}
+
+.card-header h3{
+    margin:0 0 0px;
+    font-size:20px;
+    font-weight:bold;
+    color:#2083C2;
+}
+.card-block {
+    -moz-box-flex: 1;
+    flex: 1 1 auto;
+    padding: 20px;
+    color:#232323;
+    box-shadow:inset 0px 4px 5px rgba(0,0,0,0.1);
+    border-top:1px soild #000;
+    border-radius:0;
+}
+
+/*******************************************************************************/
+
+.imagen-redonda {
+    width: 40px;
+    height: 40px;
+}
+
+.zoom {
+    transition: transform .2s; /* Animation */
+}
+
+.zoom:hover {
+    transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+/*******************************************************************************/
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -9px;
+    margin-left: -1px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-right: -10px;
+    margin-top: 5px;
+}
+
+/*******************************************************************************/
+/*faq*/
+/*
+body{
+  background: #DE6262;
+  background: -webkit-linear-gradient(to bottom, #FFB88C, #DE6262);
+  background: linear-gradient(to bottom, #FFB88C, #DE6262);
+}
+*/
