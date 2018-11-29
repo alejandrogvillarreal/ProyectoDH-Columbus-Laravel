@@ -15,14 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('index');
-});
+Route::get('/home', 'HomeController@index');
 
-Route::get('/faq', function () {
-    return view('preguntas');
-});
+Route::get('/terminos-condiciones', 'TerminosYCondicionesController@index');
 
-Route::get('/perfil', function () {
-    return view('profile');
-});
+Route::get('/faq', 'FaqController@index');
+
+Route::get('/contacto', 'ContactController@index');
+
+Route::get('/perfil', 'ProfileController@index');
+
+Route::get('/producto', 'ProductController@index');
+
+Route::get('/carrito', 'CartController@index');
+
+Route::get('/categorias', 'CategoryController@index');
