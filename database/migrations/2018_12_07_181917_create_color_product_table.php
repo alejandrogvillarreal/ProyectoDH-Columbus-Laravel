@@ -16,6 +16,8 @@ class CreateColorProductTable extends Migration
         Schema::create('color_product', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->unsignedInteger('product_id');
+            $table->unsignedInteger('color_id');
             $table->foreign('product_id')->references('id')->on('products');
             $table->foreign('color_id')->references('id')->on('colors');
         });

@@ -18,6 +18,8 @@ class CreateSalesTable extends Migration
             $table->timestamps();
             $table->decimal('price', 8, 2); // 999.999.99
             $table->integer('quantity');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('state_id');    
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('state_id')->references('id')->on('states');
         });

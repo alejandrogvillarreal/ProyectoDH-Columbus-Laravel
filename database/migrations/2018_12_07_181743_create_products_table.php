@@ -19,8 +19,8 @@ class CreateProductsTable extends Migration
           $table->decimal('price', 8, 2); // 999.999.99
           $table->integer('stock');
           $table->string('image', 100)->default('default.png');
+          $table->unsignedInteger('category_id')->nullable();
           $table->foreign('category_id')->references('id')->on('categories');
-          $table->foreign('genre_id')->references('id')->on('genres');
           $table->timestamps();
         });
     }
