@@ -16,6 +16,10 @@ class CreateSalesTable extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->decimal('price', 8, 2); // 999.999.99
+            $table->integer('quantity');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('state_id')->references('id')->on('states');
         });
     }
 

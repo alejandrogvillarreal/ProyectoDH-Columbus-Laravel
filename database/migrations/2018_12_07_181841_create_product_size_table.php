@@ -16,6 +16,8 @@ class CreateProductSizeTable extends Migration
         Schema::create('product_size', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('size_id')->references('id')->on('sizes');
         });
     }
 
