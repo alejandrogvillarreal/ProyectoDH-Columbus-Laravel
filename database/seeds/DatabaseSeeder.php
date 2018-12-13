@@ -25,17 +25,17 @@ class DatabaseSeeder extends Seeder
 
 
         foreach ($products as $oneProduct) {
-    			$oneProduct->brand()->associate($brands->random(1)->first()->id);
+    			// $oneProduct->brand()->associate($brands->random(1)->first()->id);
     			$oneProduct->category()->associate($categories->random(1)->first()->id);
     			$oneProduct->save();
 
-    			$oneProduct->colors()->sync($colors->random(3));
-          $oneProduct->size()->sync($sizes->random(3));
+    			// $oneProduct->colors()->sync($colors->random(3));
+          // $oneProduct->size()->sync($sizes->random(3));
 
     		}
 
         foreach ($categories as $oneCategory) {
-          $oneCategory->subCategory()->associate($subcategories->random(1)->first()->id);
+          // $oneCategory->subCategories()->associate($subcategories->random(1)->first()->id);
           $oneCategory->save();
         }
 
