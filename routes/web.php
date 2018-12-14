@@ -12,21 +12,25 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/home');
 });
 
-Route::get('/home', 'HomeController@index');
+// Route::get('/home', 'HomeController@index');
 
 Route::get('/terminos-condiciones', 'TerminosYCondicionesController@index');
 
 Route::get('/faq', 'FaqController@index');
 
-Route::get('/contacto', 'ContactController@index');
+Route::get('/contact', 'ContactController@index');
 
-Route::get('/perfil', 'ProfileController@index');
+Route::get('/profile', 'ProfileController@index');
 
-Route::get('/producto', 'ProductController@index');
+Route::get('/product', 'ProductController@index');
 
-Route::get('/carrito', 'CartController@index');
+Route::get('/cart', 'CartController@index');
 
-Route::get('/categorias', 'CategoryController@index');
+Route::get('/categories', 'CategoryController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

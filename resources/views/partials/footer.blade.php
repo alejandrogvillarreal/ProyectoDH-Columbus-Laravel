@@ -26,13 +26,13 @@
           <h6 class="text-uppercase font-weight-bold">Atención al Cliente</h6>
           <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
           <p>
-            <a class="dark-grey-text" href="contacto.php" >Contacto</a>
+            <a class="dark-grey-text" href="/contact" >Contacto</a>
           </p>
           <p>
-            <a class="dark-grey-text" href="preguntas.php">Preguntas Frecuentes</a>
+            <a class="dark-grey-text" href="/faq">Preguntas Frecuentes</a>
           </p>
           <p>
-            <a class="dark-grey-text" href="paginaInfo.php">Privacidad y terminos</a>
+            <a class="dark-grey-text" href="/terminos-condiciones">Privacidad y terminos</a>
           </p>
         </div>
         <!-- Grid column -->
@@ -44,10 +44,10 @@
           <h6 class="text-uppercase font-weight-bold">Usuario</h6>
           <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
           <p>
-            <a class="dark-grey-text" href="perfil.php">Mi cuenta</a>
+            <a class="dark-grey-text" href="/profile">Mi cuenta</a>
           </p>
           <p>
-            <a class="dark-grey-text" href="carrito.php">Mi carrito</a>
+            <a class="dark-grey-text" href="/cart">Mi carrito</a>
           </p>
 
         </div>
@@ -79,7 +79,7 @@
     <!-- Copyright -->
 
 
-    
+
 
   </footer>
   <!-- Footer -->

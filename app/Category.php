@@ -6,13 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $fillable = ['name', 'subcategory_id'];
+    protected $fillable = ['name'];
 
     public function products(){
       return $this->hasMany(Product::class);
     }
 
-    public function subCategories(){
-      return $this->hasMany(Subcategory::class);
+    public function subcategories(){
+      return $this->belongsToMany(Subcategory::class)->withTimestamps();
     }
+
 }

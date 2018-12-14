@@ -21,6 +21,8 @@ class CreateProductsTable extends Migration
           $table->string('image', 100)->default('default.png');
           $table->unsignedInteger('category_id')->nullable();
           $table->foreign('category_id')->references('id')->on('categories');
+          $table->unsignedInteger('brand_id')->nullable();
+          $table->foreign('brand_id')->references('id')->on('brands');
           $table->timestamps();
         });
     }
