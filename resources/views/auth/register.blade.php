@@ -168,11 +168,14 @@
             </div>
             <div class="col">
               <label>Pais de Nacimiento</label>
-              <select id="inputState" class="form-control" name="pais" value="">
-
-              </select>
-              <div class="invalid-feedback">
-              </div>
+                <select id="inputState" class="form-control" name="pais" value="">
+                  <option value="">Seleccione uno</option>
+                </select>
+                <label id="provincia" style="display:none">Provincia</label>
+                <select id="provinciaSelect" style="display:none" class="form-control mt-2">
+                </select>
+                <div class="invalid-feedback">
+                </div>
               <span> <?php // echo $errorPais; ?></span>
             </div>
           </div>
@@ -231,6 +234,5 @@
       <!-- ACA TERMINA LA COLUMNA DERECHA DE LA PANTALLA (FORM)-->
   </div>
 </div>
-
 
 @endsection
