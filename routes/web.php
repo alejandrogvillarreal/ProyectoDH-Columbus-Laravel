@@ -29,7 +29,16 @@ Route::get('/product', 'ProductController@index');
 
 Route::get('/product/create', 'ProductController@create');
 
+Route::post('/product/store', 'ProductController@store');
+
 Route::get('/cart', 'CartController@index');
+
+// Route::get('/products', 'ProductsController@index');
+Route::get('/product/{id}', 'ProductController@show');
+Route::put('/product/{id}', 'ProductController@update');
+// Route::delete('/products/{id}', 'ProductsController@destroy');
+Route::get('/product/{id}/edit', 'ProductController@edit');
+
 
 Route::get('/categories', 'CategoryController@index');
 

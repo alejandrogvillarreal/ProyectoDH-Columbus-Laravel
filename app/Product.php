@@ -24,5 +24,8 @@ class Product extends Model
       return $this->belongsToMany(Size::class)->withTimestamps();
     }
 
+    public function user(){
+      return $this->belongsTo(User::class);
+    }
 
 }

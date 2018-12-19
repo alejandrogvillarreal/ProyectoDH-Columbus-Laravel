@@ -4,9 +4,9 @@
 
 @section('content')
 
-	<h2>Crear producto</h2>
-	
-	<form action="" method="post" enctype="multipart/form-data">
+	<h2>Subir producto</h2>
+
+	<form action="/product/store" method="post" enctype="multipart/form-data">
 		@csrf
 		<div class="row">
 			<div class="col-6">
@@ -109,6 +109,10 @@
 							</div>
 						@endforeach
 				</div>
+				<div class="form-group">
+					<label for="">Stock</label>
+					<input type="text" id="stock" name="stock">
+				</div>
 			</div>
 			<div class="col-6">
 				<div class="form-group">
@@ -127,7 +131,7 @@
 			</div>
 		</div>
 
-		<button type="submit" class="btn btn-success">Save product</button>
+		<button type="submit" class="btn btn-success">Subir</button>
 	</form>
 
 @endsection

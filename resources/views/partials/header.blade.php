@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="/home">
-          <img src="images/logo.png" class="rounded float-left" alt="logo" width="185" height="35">
+          <img src="/images/logo.png" class="rounded float-left" alt="logo" width="185" height="35">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -117,7 +117,7 @@
                 <li class="nav-item my-auto">
                   <!-- <a class="btn btn-success btn-sm" href="carrito.php"> -->
                   <a class="btn btn-sm" href="/cart"  style="background-color:#ABB2B9;">
-                      <!--<i class="fa fa-shopping-cart"></i>--> <!-- Carrito --><img src="images/carrito.png">
+                      <!--<i class="fa fa-shopping-cart"></i>--> <!-- Carrito --><img src="/images/carrito.png">
                       <span class="badge badge-light">3</span>
                   </a>
                 </li>

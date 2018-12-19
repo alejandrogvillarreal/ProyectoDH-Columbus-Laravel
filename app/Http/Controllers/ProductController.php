@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Http\Requests\ProductRequest;
 
 class ProductController extends Controller
 {
@@ -15,7 +16,7 @@ class ProductController extends Controller
     {
         //
         $products = \App\Product::all();
-        return view('')->with(compact('products'));
+        return view('products.index')->with(compact('products'));
     }
 
     /**
@@ -28,9 +29,9 @@ class ProductController extends Controller
         //
         $colors = \App\Color::all();
         $brands = \App\Brand::all();
-		$categories = \App\Category::all();
-		$subcategories = \App\Subcategory::all();
-		return view('products.create')->with(compact('brands', 'categories', 'colors', 'subcategories'));
+    		$categories = \App\Category::all();
+    		$subcategories = \App\Subcategory::all();
+    		return view('products.create')->with(compact('brands', 'categories', 'colors', 'subcategories'));
     }
 
     /**
@@ -41,15 +42,23 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new \App\Product;
         $product->name = $request->input('name');
         $product->price = $request->input('price');
-        $product->image = $request->input('image');     
-        $product->color = $request->input('color');   
-		$product->category_id = $request->input('category_id');
+        $product->image = $request->input('image');
+        // $product->color = $request->input('color');
+        $product->stock = $request->input('stock');
+		    $product->category_id = $request->input('category_id');
         $product->brand_id = $request->input('brand_id');
 
-        return redirect('');
+    		$productImage = $request->file('image');
+    		$imageName = uniqid("product_img_") . "." . $productImage->extension();
+    		$productImage->storePubliclyAs("public/products", $imageName);
+        $product->image = $imageName;
+
+        $product->user_id = Auth::user()->id;
+        $product->save();
+        return redirect('/');
     }
 
     /**
@@ -60,10 +69,8 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
-        
-		$product = Product::find($id);
-		return view('')->with(compact('product'));
+		    $product = \App\Product::find($id);
+		    return view('products.show')->with(compact('product'));
     }
 
     /**
@@ -74,16 +81,16 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
         $user_id = Auth::user()->id;
-		$product = Product::find($id);
+		    $product = \App\Product::find($id);
         $brands = \App\Brand::all();
-        $product = \App\Color::all();        
+        $colors = \App\Color::all();
         $categories = \App\Category::all();
-        
-        if ($user_id == $product->user_id) {
-			return view('')->with(compact('product', 'brands', 'categories', 'colors'));
-		}
+        $subcategories = \App\Subcategory::all();
+
+        // if ($user_id == $product->user_id) {
+			return view('products.edit')->with(compact('product', 'brands', 'categories', 'colors', 'subcategories'));
+		// }
     }
 
     /**
@@ -96,14 +103,14 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $product = Product::find($id);
+        $product = \App\Product::find($id);
         $product->name = $request->input('name');
         $product->price = $request->input('price');
-		$product->image = $request->input('image');        
-		$product->category_id = $request->input('category_id');
+		    $product->image = $request->input('image');
+        $product->category_id = $request->input('category_id');
         $product->brand_id = $request->input('brand_id');
 
-        return redirect()->route('');
+        return redirect()->route('products.index');
     }
 
     /**
@@ -115,8 +122,8 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
-        $product = Product::find($id);
-		$product->delete();
-		return redirect('');
+        $product = \App\Product::find($id);
+    		$product->delete();
+    		return redirect('');
     }
 }
