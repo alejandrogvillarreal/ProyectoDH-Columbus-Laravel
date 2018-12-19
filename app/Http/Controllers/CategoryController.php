@@ -14,7 +14,8 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        return view('categorias');
+        $categories = \App\Category::all();
+        return view('categorias')->with(compact('categories'));
     }
 
     /**

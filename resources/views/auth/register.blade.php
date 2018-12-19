@@ -168,8 +168,13 @@
             </div>
             <div class="col">
               <label>Pais de Nacimiento</label>
-                <select id="inputState" class="form-control" name="pais" value="">
-                  <option value="">Seleccione uno</option>
+                <select id="inputState" class="form-control {{ $errors->has('country') ? ' is-invalid' : '' }}" name="pais" value="">
+                  @if ($errors->has('country'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('country') }}</strong>
+                    </span>
+                  @endif
+                  <option value="">Seleccioná</option>
                 </select>
                 <label id="provincia" style="display:none">Provincia</label>
                 <select id="provinciaSelect" style="display:none" class="form-control mt-2">
@@ -204,14 +209,24 @@
             </div>
             <div class="col">
               <label>Repetir Contraseña</label>
-                <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
+                <input id="password-confirm" type="password" class="form-control {{ $errors->has('confirmPassword') ? ' is-invalid' : '' }}" name="password_confirmation">
+                @if ($errors->has('confirmPassword'))
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $errors->first('confirmPassword') }}</strong>
+                  </span>
+                @endif
             </div>
           </div>
         </div>
         <div class="custom-file form-group">
           <label>Avatar</label>
-          <input type="file" class="custom-file-input text-center center-block input-file-ale" id="customFile"  name="userPhoto">
-          <label class="custom-file-label text-left" for="customFile">Elegir</label>
+          <input type="file" class="custom-file-input text-center center-block input-file-ale {{ $errors->has('imageProfile') ? ' is-invalid' : '' }}" id="imageProfile"  name="userPhoto">
+          <label class="custom-file-label text-left" for="imageProfile">Elegir</label>
+              @if ($errors->has('imageProfile'))
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $errors->first('imageProfile') }}</strong>
+                </span>
+              @endif
           <span> <?php // echo $errorImg; ?></span>
         </div>
         <div class="form-check">
@@ -234,5 +249,6 @@
       <!-- ACA TERMINA LA COLUMNA DERECHA DE LA PANTALLA (FORM)-->
   </div>
 </div>
+<script src="js/paises.js"></script>
 
 @endsection

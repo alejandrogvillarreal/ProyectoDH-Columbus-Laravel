@@ -27,6 +27,8 @@ Route::get('/profile', 'ProfileController@index');
 
 Route::get('/product', 'ProductController@index');
 
+Route::get('/product/create', 'ProductController@create');
+
 Route::get('/cart', 'CartController@index');
 
 Route::get('/categories', 'CategoryController@index');

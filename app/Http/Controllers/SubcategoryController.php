@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Genre;
 use Illuminate\Http\Request;
 
-class GenreController extends Controller
+class SubcategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +14,8 @@ class GenreController extends Controller
     public function index()
     {
         //
+        $subcategories = \App\Subcategory::all();
+        return view('')->with(compact('subcategories'));
     }
 
     /**

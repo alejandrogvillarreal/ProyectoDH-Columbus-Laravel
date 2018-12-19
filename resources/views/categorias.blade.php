@@ -10,7 +10,10 @@
               <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
                       <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
-                      <li class="breadcrumb-item"><a href="categorias.php">Hombre</a></li>
+                      {{-- @foreach ($subcategories as $oneSubcategory)
+                      <li class="breadcrumb-item"><a href="categorias.php">{{$oneSubcategory->name}}</a></li>
+                          
+                      @endforeach --}}
                       <li class="breadcrumb-item active" aria-current="page">Buzos</li>
                   </ol>
               </nav>
@@ -24,11 +27,9 @@
               <div class="card bg-light mb-3">
                   <div class="card-header bg-dark text-white text-uppercase">Categorias</div>
                   <ul class="list-group category_block">
-                      <li class="list-group-item"><a href="categorias.php" class="text-secondary">Categoria 1</a></li>
-                      <li class="list-group-item"><a href="categorias.php" class="text-secondary">Categoria 2</a></li>
-                      <li class="list-group-item"><a href="categorias.php" class="text-secondary">Categoria 3</a></li>
-                      <li class="list-group-item"><a href="categorias.php" class="text-secondary">Categoria 4</a></li>
-                      <li class="list-group-item"><a href="categorias.php" class="text-secondary">Categoria 5</a></li>
+                      @foreach ($categories as $oneCategory)
+                  <li class="list-group-item"><a href="categories/{{$oneCategory->id}}" class="text-secondary">{{$oneCategory->name}}</a></li>
+                      @endforeach
                   </ul>
               </div>
               <!--<div class="card bg-light mb-3">
@@ -43,7 +44,7 @@
           </div>
           <!-- FIN DEL EL MENU LATERAL IZQUIERDO -->
 
-
+              
           <!-- ACA EMPIEZA LA SECCION DERECHA DE LA PAGINA(PRODUCTOS) -->
           <div class="col">
               <div class="row">

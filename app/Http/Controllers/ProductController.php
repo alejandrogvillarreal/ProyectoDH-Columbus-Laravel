@@ -14,7 +14,8 @@ class ProductController extends Controller
     public function index()
     {
         //
-        return view('product');
+        $products = \App\Product::all();
+        return view('')->with(compact('products'));
     }
 
     /**
@@ -25,6 +26,11 @@ class ProductController extends Controller
     public function create()
     {
         //
+        $colors = \App\Color::all();
+        $brands = \App\Brand::all();
+		$categories = \App\Category::all();
+		$subcategories = \App\Subcategory::all();
+		return view('products.create')->with(compact('brands', 'categories', 'colors', 'subcategories'));
     }
 
     /**
@@ -36,6 +42,14 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+        $product->name = $request->input('name');
+        $product->price = $request->input('price');
+        $product->image = $request->input('image');     
+        $product->color = $request->input('color');   
+		$product->category_id = $request->input('category_id');
+        $product->brand_id = $request->input('brand_id');
+
+        return redirect('');
     }
 
     /**
@@ -47,6 +61,9 @@ class ProductController extends Controller
     public function show($id)
     {
         //
+        
+		$product = Product::find($id);
+		return view('')->with(compact('product'));
     }
 
     /**
@@ -58,6 +75,15 @@ class ProductController extends Controller
     public function edit($id)
     {
         //
+        $user_id = Auth::user()->id;
+		$product = Product::find($id);
+        $brands = \App\Brand::all();
+        $product = \App\Color::all();        
+        $categories = \App\Category::all();
+        
+        if ($user_id == $product->user_id) {
+			return view('')->with(compact('product', 'brands', 'categories', 'colors'));
+		}
     }
 
     /**
@@ -70,6 +96,14 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $product = Product::find($id);
+        $product->name = $request->input('name');
+        $product->price = $request->input('price');
+		$product->image = $request->input('image');        
+		$product->category_id = $request->input('category_id');
+        $product->brand_id = $request->input('brand_id');
+
+        return redirect()->route('');
     }
 
     /**
@@ -81,5 +115,8 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+        $product = Product::find($id);
+		$product->delete();
+		return redirect('');
     }
 }
