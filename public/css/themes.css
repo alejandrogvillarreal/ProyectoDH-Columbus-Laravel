@@ -1,0 +1,79 @@
+/* TEMA COOL */
+
+.cool{
+  color: #f2f2f2;
+  background: #94d2e6;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.cool a {
+  text-decoration: none;
+  color: #3375e0;
+}
+
+.cool a:hover {
+  color: #1f4287;
+}
+
+.cool .link-german{
+  color: #5893d4!important;
+}
+.bg-german{
+  background: #f16f6f;
+}
+
+.navbar-german a{
+  text-decoration: none;
+  color: #f2f2f2!important;
+}
+
+.navbar-german #buscador{
+  background-color: #5893d4;
+}
+
+.navbar-german a:hover{
+  color: #ffffff!important;
+}
+
+/* TEMA RELAX*/
+
+.relax {
+  background: #fdf1db;
+  color: #343a40;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.relax a {
+  text-decoration: none;
+  color: #f70e7b;
+}
+
+.relax a:hover {
+  color: #84253e;
+}
+
+.relax .link-german{
+  color: #f70e7b!important;
+}
+
+.bg-relax{
+  background: #a6cb12;
+}
+
+.navbar-relax a{
+  text-decoration: none;
+  color: #f4f6f9!important;
+}
+
+.navbar-relax #buscador{
+  background-color: #343a40;
+}
+
+.navbar-relax a:hover{
+  color: #ffffff!important;
+}
+
+/* TEMA DEFAULT */
+.light{
+  color: #343a40;
+}
