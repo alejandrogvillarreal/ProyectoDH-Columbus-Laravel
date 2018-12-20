@@ -52,7 +52,7 @@
         <div class="card-body">
             <a href="" data-toggle="modal" data-target="#productModal">
                 <!-- <img class="img-fluid" src="https://dummyimage.com/800x800/55595c/fff" /> -->
-                <img class="img-fluid img-thumbnail rounded mx-auto d-block shadow-lg" src="{{ Storage::url('products/' . $product->image)}} ?? 'default.png'"/>
+                <img class="img-fluid img-thumbnail rounded mx-auto d-block shadow-lg" src="{{ Storage::url('products/' . $product->image)}}"/>
             </a>
         </div>
     </div>
@@ -90,7 +90,7 @@
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="">
-                                -
+                                
                             </button>
                         </div>
                         <input type="text" class="form-control"  id="quantity" name="quantity" min="1" max="100" value="1">

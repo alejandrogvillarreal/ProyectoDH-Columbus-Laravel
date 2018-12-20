@@ -103,7 +103,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item link-german" href="/product/create">Subir producto</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item link-german" href="/product/edit/">Mis productos</a>
+                        <a class="dropdown-item link-german" href="/product/edit">Mis productos</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item link-german" href="/logout"
                         onclick="event.preventDefault();
