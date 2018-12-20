@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/profile';
 
     /**
      * Create a new controller instance.
@@ -50,12 +50,13 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'alpha', 'max:50', 'min:3'],
-            'lastname' => ['required', 'alpha', 'min:3', 'max:50'],
+            'lastname' => ['required', 'alpha', 'max:50', 'min:3'],
+            'country' => ['required', 'alpha', 'min:3', 'max:50'],
             'username' => ['required', 'string', 'min:3', 'max:50'],
             'email' => ['required', 'string', 'email', 'max:50', 'unique:users'],
             'country' => ['required'],
-            'password' => ['required', 'min:6', 'confirmed'],
-            'confirmPassword' => ['min:6'],
+            'password' => 'required | string | min:6 | same:confirmPassword',
+            'confirmPassword' => ['min:6', 'same:password'],
             'imageProfile' => ['string', 'min:30', 'image'],
         ],
         [
@@ -71,7 +72,8 @@ class RegisterController extends Controller
             'email.email' => 'Debe ser un formato valido de email',
             'country' => 'Debes seleccionar un pais',
             'password.min' => 'La contrasena debe ser de al menos 6 caracteres',
-            'password.confirmed' => 'La contrasena debe coincidir',
+            'confirmPassword.min' => 'La contrasena debe ser de al menos 6 caracteres',
+            'same' => 'La contrasena debe coincidir',
             'imageProfile.image' => 'Tiene que ser un formato valido',
         ]);
     }
@@ -86,6 +88,9 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'lastname' => $data['lastname'],
+            'username' => $data['username'],
+            'country' => $data['country'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);

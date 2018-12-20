@@ -131,7 +131,7 @@
 
     <!-- ACA EMPIEZA LA COLUMNA DERECHA DE LA PANTALLA (FORM)-->
     <div class="col-md-4 login-sec">
-      <form class="login-form registro-form clearfix" action="" method="post" enctype="multipart/form-data">
+      <form class="login-form registro-form clearfix" action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
         @csrf
       <div class="form-group">
         <div class="form-row">
@@ -168,7 +168,7 @@
             </div>
             <div class="col">
               <label>Pais de Nacimiento</label>
-                <select id="inputState" class="form-control {{ $errors->has('country') ? ' is-invalid' : '' }}" name="pais" value="">
+                  <select id="country" class="form-control" name="country" value="">
                   @if ($errors->has('country'))
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $errors->first('country') }}</strong>
@@ -209,7 +209,7 @@
             </div>
             <div class="col">
               <label>Repetir Contraseña</label>
-                <input id="password-confirm" type="password" class="form-control {{ $errors->has('confirmPassword') ? ' is-invalid' : '' }}" name="password_confirmation">
+                <input id="password-confirm" type="password" class="form-control {{ $errors->has('confirmPassword') ? ' is-invalid' : '' }}" name="confirmPassword">
                 @if ($errors->has('confirmPassword'))
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $errors->first('confirmPassword') }}</strong>

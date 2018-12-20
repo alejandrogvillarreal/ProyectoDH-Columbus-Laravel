@@ -66,7 +66,7 @@
                 </li>
             </ul>
 
-            <form class="form-inline my-2 my-lg-0">
+            {{-- <form class="form-inline my-2 my-lg-0">
                 <div class="input-group input-group-sm">
                     <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Buscar...">
                     <div class="input-group-append">
@@ -75,7 +75,7 @@
                         </button>
                     </div>
                 </div>
-            </form>
+            </form> --}}
             <ul class="navbar-nav m-auto">
             <!-- SI EL USUARIO ESTA LOGUEADO LE MUESTRO -->
             @guest

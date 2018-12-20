@@ -1,5 +1,5 @@
 //PAISES API 
-var inputState = document.getElementById('inputState');
+var inputState = document.getElementById('country');
 var inputProvincias = document.getElementById('provincia');
 var provinciaSelect = document.getElementById('provinciaSelect');
 

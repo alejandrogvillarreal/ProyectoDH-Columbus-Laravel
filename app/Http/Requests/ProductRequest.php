@@ -13,7 +13,7 @@ class ProductRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,22 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            //
-        ];
+			'name' => 'required | alpha',
+			'price' => 'required | numeric | min:100.00 |max:999.99',
+			'category_id' => 'required | integer',
+			'brand_id' => 'required | integer',
+			'image' => 'required | image',
+		];
     }
+
+    public function messages()
+	{
+		return [
+			'required' => 'El campo es obligatorio',
+			'name.alpha' => 'El campo nombre solo admite letras',
+			'price.numeric' => 'El campo precio solo admite números',
+			'price.min' => 'El precio mínimo es 10',
+			'price.max' => 'El precio máximo es 999.99',
+		];
+	}
 }
