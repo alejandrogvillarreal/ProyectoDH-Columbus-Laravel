@@ -14,9 +14,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
-        $products = \App\Product::all();
-        return view('categorias')->with(compact('products'));
+        $categories = \App\Category::all();
+        $products = \App\Product::paginate(15);
+        return view('products.index')->with(compact('products', 'categories'));
     }
 
     /**
@@ -26,7 +26,6 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
         $colors = \App\Color::all();
         $brands = \App\Brand::all();
     	$categories = \App\Category::all();
@@ -43,6 +42,7 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
         $product = new \App\Product;
+
         $product->name = $request->input('name');
         $product->price = $request->input('price');
         $product->image = $request->input('image');
@@ -99,17 +99,25 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, $id)
     {
-        //
         $product = \App\Product::find($id);
+
         $product->name = $request->input('name');
         $product->price = $request->input('price');
-		$product->image = $request->input('image');
-        $product->category_id = $request->input('category_id');
+        $product->image = $request->input('image');
+        // $product->color = $request->input('color');
+        $product->stock = $request->input('stock');
+		$product->category_id = $request->input('category_id');
         $product->brand_id = $request->input('brand_id');
 
-        return redirect()->route('products.index');
+    	$productImage = $request->file('image');
+		$imageName = uniqid("product_img_") . "." . $productImage->extension(); $productImage->storePubliclyAs("public/products", $imageName);
+        $product->image = $imageName;
+
+        $product->user_id = Auth::user()->id;
+        $product->save();
+        return redirect('/');
     }
 
     /**
@@ -120,7 +128,6 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
         $product = \App\Product::find($id);
     		$product->delete();
     		return redirect('');

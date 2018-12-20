@@ -1,109 +1,86 @@
 @extends('template.base')
 
-@section('title','Carrito')
-
-@section('customJS')
-
-  <script>
-
-    $(document).ready(function(){
-        var quantity = 1;
-
-        $('.quantity-right-plus').click(function(e){
-            e.preventDefault();
-            var quantity = parseInt($('#quantity').val());
-            $('#quantity').val(quantity + 1);
-        });
-
-        $('.quantity-left-minus').click(function(e){
-            e.preventDefault();
-            var quantity = parseInt($('#quantity').val());
-            if(quantity > 1){
-                $('#quantity').val(quantity - 1);
-            }
-        });
-
-    });
-  </script>
-
-
-@endsection
+@section('title','Todos')
 
 @section('content')
 
+  <!-- ACA VAN LOS PRODUCTOS -->
+
+          <div class="col-12">
+              <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="/home">Inicio</a></li>
+                      <li class="breadcrumb-item"><a href="/product">Todos los productos</a></li>
+                  </ol>
+              </nav>
+          </div>
+
+  <!-- ACA TERMINA EL SEGUNDO MENU -->
 
 
-<div class="col-12">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-            <li class="breadcrumb-item"><a href="categorias.php">Categoria</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Producto</li>
-        </ol>
-    </nav>
-</div>
+        <!-- ESTE ES EL MENU LATERAL IZQUIERDO -->
+          <div class="col-12 col-sm-4 col-md-3">
+              <div class="card bg-light mb-3">
+                  <div class="card-header bg-dark text-white text-uppercase">Categorias</div>
+                  <ul class="list-group category_block">
+                    @foreach ($categories as $oneCategory)
+                        <li class="list-group-item"><a href="categories/{{$oneCategory->id}}" class="text-secondary">{{$oneCategory->name}}</a></li>
+                    @endforeach
+                      {{-- @foreach ($categories as $oneCategory)
+                  <li class="list-group-item"><a href="categories/{{$oneCategory->id}}" class="text-secondary">{{$oneCategory->name}}</a></li>
+                      @endforeach --}}
+                  </ul>
+              </div>
+		        
 
-<!-- ACA VAN LOS PRODUCTOS -->
-
-
-<!-- SECCION DE LA IMAGEN -->
-<div class="col-12 col-lg-6">
-    <div class="card bg-light">
-        <div class="card-body">
-            <a href="" data-toggle="modal" data-target="#productModal">
-                <!-- <img class="img-fluid" src="https://dummyimage.com/800x800/55595c/fff" /> -->
-                <img class="img-fluid img-thumbnail rounded mx-auto d-block shadow-lg" src="images/ropa/Hombre/Buzos/buzo-1.jpg" />
-            </a>
-        </div>
-    </div>
-</div>
-<!-- FIN SECCION IMAGEN -->
-
-<!-- SECCION DEL PRODUCTO -->
-<div class="col-12 col-lg-6 add_to_cart_block">
-    <div class="card bg-light">
-        <div class="card-body">
-           <h1>Camisa rayada</h1>
-            <span class="label label-primary">Vintage</span>
-            <span class="">Nro. 1960140180</span>
-              <p class="description">
-               Mini descripción
-              </p>
-            <h2 class="product-price">$129.00</h2>
-            <hr>
-            <div>
-                <div class="form-group">
-                    <label for="colors">Talle:</label>
-                    <select class="custom-select" id="colors">
-                        <option selected>Elegir..</option>
-                        <option value="1">S</option>
-                        <option value="2">M</option>
-                        <option value="3">L</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Cantidad :</label>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="">
-                                -
-                            </button>
+              <!--<div class="card bg-light mb-3">
+                  <div class="card-header bg-success text-white text-uppercase">Last product</div>
+                  <div class="card-body shadow-lg">
+                      <img class="img-fluid" src="https://dummyimage.com/600x400/55595c/fff" />
+                      <h5 class="card-title">Nombre del producto</h5>
+                      <p class="card-text text-secondary">Breve descripción.</p>
+                      <p class="bloc_left_price">$600</p>
+                  </div>
+              </div>-->
+          </div>
+          <!-- FIN DEL EL MENU LATERAL IZQUIERDO -->
+                   
+              
+          <!-- ACA EMPIEZA LA SECCION DERECHA DE LA PAGINA(PRODUCTOS) -->
+            <div class="col">
+                    <div class="row">
+            @forelse ($products as $oneProduct)
+                        <div class="col-12 col-md-6 col-lg-4 mb-5">
+                            <div class="card zoom">
+                                <a href="/product/{{$oneProduct->id}}">
+                                    <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-2.jpg" alt="Card image cap">
+                                </a>
+                                <div class="card-body shadow-lg">
+                                <h5 class="card-title"><a href="/product/{{$oneProduct->id}}" class="card-link text-dark" title="View Product">{{ $oneProduct->name }}</a></h5>
+                                    <p class="card-text text-secondary mt-2">{{ $oneProduct->category->name ?? 'No tiene categoría' }}</p>
+                                    <p class="card-text text-secondary">{{ $oneProduct->brand->name ?? 'No tiene marca' }}</p>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="card-text text-info">${{ $oneProduct->price }}</p>
+                                        </div>
+                                        <div class="col">
+                                        <a href="/product/{{$oneProduct->id}}" class="btn btn-success btn-block" id="color-german">Comprar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <input type="text" class="form-control"  id="quantity" name="quantity" min="1" max="100" value="1">
-                        <div class="input-group-append">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
-                                +
-                            </button>
-                        </div>
+                        @empty
+            @endforelse
+                        <div class="col-12 justify-content-center">
+                            {{ $products->links() }}
+                        </div>       
                     </div>
-                </div>
-                <a href="cart.html" class="btn btn-success btn-lg btn-block text-uppercase">Agregar al carrito</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- FIN DE SECCION DEL PRODUCTO -->
+            </div>        
+            
+          <!-- ACA TERMINA LA SECCION DERECHA DE LA PAGINA(PRODUCTOS) -->
 
-<!-- ACA TERMINA DE SECCION DE LOS PRODUCTOS -->
+  <!-- ACA TERMINA DE SECCION DE LOS PRODUCTOS -->
+
 
 @endsection

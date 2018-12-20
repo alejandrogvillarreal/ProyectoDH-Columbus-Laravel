@@ -31,27 +31,28 @@
                       Categorias
                     </a>
           		      <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item link-german" href="/product">Todos</a>
                       <!-- CATEGORIA DE HOMBRES -->
                       <li class="dropdown-submenu">
-                        <a class="dropdown-item" href="/categories">Hombres</a>
+                        <a class="dropdown-item link-german" href="/men">Hombres</a>
                         <ul class="dropdown-menu">
                           <li>
-                            <a class="dropdown-item" href="/categories">Buzos</a>
-                            <a class="dropdown-item" href="/categories">Remeras</a>
-                            <a class="dropdown-item" href="/categories">Camisas</a>
-                            <a class="dropdown-item" href="/categories">Jeans</a>
+                            <a class="dropdown-item link-german" href="/categories">Buzos</a>
+                            <a class="dropdown-item link-german" href="/categories">Remeras</a>
+                            <a class="dropdown-item link-german" href="/categories">Camisas</a>
+                            <a class="dropdown-item link-german" href="/categories">Jeans</a>
                           </li>
                         </ul>
                       </li>
                       <!-- CATEGORIA DE MUJERES -->
                       <li class="dropdown-submenu">
-                        <a class="dropdown-item" href="/categories">Mujeres</a>
+                        <a class="dropdown-item link-german" href="/women">Mujeres</a>
                         <ul class="dropdown-menu">
                           <li>
-                            <a class="dropdown-item" href="/categories">Blusas</a>
-                            <a class="dropdown-item" href="/categories">Pantalones</a>
-                            <a class="dropdown-item" href="/categories">Camisas</a>
-                            <a class="dropdown-item" href="/categories">Vestidos</a>
+                            <a class="dropdown-item link-german" href="/categories">Blusas</a>
+                            <a class="dropdown-item link-german" href="/categories">Pantalones</a>
+                            <a class="dropdown-item link-german" href="/categories">Camisas</a>
+                            <a class="dropdown-item link-german" href="/categories">Vestidos</a>
                           </li>
                         </ul>
                       </li>
@@ -96,13 +97,13 @@
                       Mi cuenta
                     </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/profile">Perfil de {{ Auth::user()->name }}</a>
+                        <a class="dropdown-item link-german" href="/profile">Perfil de {{ Auth::user()->name }}</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Compras </a>
+                        <a class="dropdown-item link-german" href="#">Compras </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="product/create">Subir producto</a>
+                        <a class="dropdown-item link-german" href="product/create">Subir producto</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/logout"
+                        <a class="dropdown-item link-german" href="/logout"
                         onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();"
                         >

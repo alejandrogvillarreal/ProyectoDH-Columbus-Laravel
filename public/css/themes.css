@@ -56,8 +56,16 @@
   color: #f70e7b!important;
 }
 
+.relax .link-german:hover{
+  color: #f70e7b!important;
+}
+
 .bg-relax{
   background: #a6cb12;
+}
+
+.relax #color-german{
+  color: #f4f6f9;
 }
 
 .navbar-relax a{

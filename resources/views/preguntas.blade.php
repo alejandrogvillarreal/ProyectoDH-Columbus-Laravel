@@ -17,7 +17,7 @@
               <div class="card-header">
                 <div>
                   <a data-toggle="collapse" href="#preguntas1" aria-expanded="false" class="collapsed">
-                    <h3>Cómo comprar en Columbus?</h3>
+                    <h3 class="link-german">Cómo comprar en Columbus?</h3>
                   </a>
                 </div>
               </div>
@@ -51,14 +51,14 @@
               <div class="card-header">
                 <div>
                   <a data-toggle="collapse" href="#preguntas2" aria-expanded="false" class="collapsed">
-                    <h3>Cómo creo una cuenta en Columbus?</h3>
+                    <h3 class="link-german">Cómo creo una cuenta en Columbus?</h3>
                   </a>
                 </div>
               </div>
               <div id="preguntas2" class="collapse" aria-expanded="false">
                 <div class="card-block">
                   <p>
-                    Para registrarte en Columbus hacé click <a href="registro.php">Acá</a>
+                    Para registrarte en Columbus hacé click <a href="/register">Acá</a>
                   </p>
                 </div>
               </div>
@@ -68,7 +68,7 @@
               <div class="card-header">
                 <div>
                   <a data-toggle="collapse" href="#preguntas3" aria-expanded="false" class="collapsed">
-                    <h3>Dónde veo los detalles del producto?</h3>
+                    <h3 class="link-german">Dónde veo los detalles del producto?</h3>
                   </a>
                 </div>
               </div>
@@ -84,23 +84,23 @@
 
 
             <!-- INICIO PREGUNTA -->
-            <div class="card shadow">
+            {{-- <div class="card shadow">
               <div class="card-header">
                 <div>
                   <a data-toggle="collapse" href="#preguntas4" aria-expanded="false" class="collapsed">
-                    <h3>Qué hago si olvidé mi contraseña?</h3>
+                    <h3 class="link-german">Qué hago si olvidé mi contraseña?</h3>
                   </a>
                 </div>
               </div>
               <div id="preguntas4" class="collapse" aria-expanded="false">
                 <div class="card-block">
                   <p>
-                    <a href="olvidoPassword.php">Hacé click Acá</a> para acceder a "Olvidé mi contraseña". Ingresá tu mail registrado para que te enviemos una nueva contraseña de acceso.
+                    <a href="">Hacé click Acá</a> para acceder a "Olvidé mi contraseña". Ingresá tu mail registrado para que te enviemos una nueva contraseña de acceso.
                     Para tu seguridad, en lugar de enviarte tu contraseña anterior crearemos una nueva.
                   </p>
                 </div>
               </div>
-            </div>
+            </div> --}}
             <!-- FIN PREGUNTA -->
 
           </div>

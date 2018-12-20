@@ -99,7 +99,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="cart.html" class="btn btn-success btn-lg btn-block text-uppercase">Agregar al carrito</a>
+                <a href="cart.html" class="btn btn-success btn-lg btn-block text-uppercase" id="color-german">Agregar al carrito</a>
             </div>
         </div>
     </div>

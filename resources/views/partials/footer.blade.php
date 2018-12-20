@@ -47,7 +47,7 @@
             <a class="dark-grey-text" href="/profile">Mi cuenta</a>
           </p>
           <p>
-            <a class="dark-grey-text" href="/cart">Mi carrito</a>
+            <p class="dark-grey-text" href="/cart">Nuestros temas:</p>
           </p>
           <button class="btn btn-secondary" id="light"></button>
           <button class="btn btn-light" id="relax"></button>
