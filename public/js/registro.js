@@ -45,22 +45,22 @@ window.onload = function(){
               div.innerHTML = 'Campo obligatorio';
             }
         });
-        alert("Error en algun campo");
+        // alert("Error en algun campo");
       }
     });
 
     //valido los campos
-    var inputNombre = document.querySelector('input[name="nombre"]');
-    var inputApellido = document.querySelector('input[name="apellido"]');
+    var inputNombre = document.querySelector('input[name="name"]');
+    var inputApellido = document.querySelector('input[name="lastname"]');
     var inputUsername = document.querySelector('input[name="username"]');
-    var inputPais = document.querySelector('input[name="pais"]');
+    // var inputPais = document.querySelector('input[name="pais"]');
     var inputEmail = document.querySelector('input[name="email"]');
     var inputPassword = document.querySelector('input[name="password"]');
-    var inputPasswordR = document.querySelector('input[name="passwordR"]');
+    var inputPasswordR = document.querySelector('input[name="confirmPassword"]');
 
     //VALIDACION DEL NOMBRE
     inputNombre.addEventListener('keyup',function(event){
-      if ((this.value).length < 4) {
+      if ((this.value).length < 3) {
         this.classList.add('is-invalid');
         var div = this.parentElement.querySelector('.invalid-feedback');
         div.innerHTML = 'El nombre es demasiado corto';
@@ -77,7 +77,7 @@ window.onload = function(){
 
     //VALIDACION DEL APELLIDO
     inputApellido.addEventListener('keyup',function(event){
-      if ((this.value).length < 4) {
+      if ((this.value).length < 3) {
         this.classList.add('is-invalid');
         var div = this.parentElement.querySelector('.invalid-feedback');
         div.innerHTML = 'El apellido es demasiado corto';
@@ -95,7 +95,7 @@ window.onload = function(){
 
     //VALIDACION DEL USERNAME
     inputUsername.addEventListener('keyup',function(event){
-      if ((this.value).length < 4) {
+      if ((this.value).length < 3) {
         this.classList.add('is-invalid');
       var div = this.parentElement.querySelector('.invalid-feedback');
         div.innerHTML = 'El username es demasiado corto';
@@ -127,7 +127,7 @@ window.onload = function(){
 
     //VALIDACION DEL PASSWORD
     inputPassword.addEventListener('keyup',function(event){
-      if ((this.value).length < 4) {
+      if ((this.value).length < 6) {
         this.classList.add('is-invalid');
       var div = this.parentElement.querySelector('.invalid-feedback');
         div.innerHTML = 'El password es demasiado corto';

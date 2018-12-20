@@ -52,7 +52,7 @@
         <div class="card-body">
             <a href="" data-toggle="modal" data-target="#productModal">
                 <!-- <img class="img-fluid" src="https://dummyimage.com/800x800/55595c/fff" /> -->
-                <img class="img-fluid img-thumbnail rounded mx-auto d-block shadow-lg" src="{{$product->image}}" />
+                <img class="img-fluid img-thumbnail rounded mx-auto d-block shadow-lg" src="{{ Storage::url('products/' . $product->image)}} ?? 'default.png'"/>
             </a>
         </div>
     </div>

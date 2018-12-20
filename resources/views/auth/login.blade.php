@@ -66,6 +66,9 @@
                   <strong>{{ $errors->first('email') }}</strong>
               </span>
           @endif
+          <div class="invalid-feedback">
+              {{-- javascript --}}
+          </div>
         </div>
         <div class="form-group">
           <label>Password</label>
@@ -76,6 +79,9 @@
                   <strong>{{ $errors->first('password') }}</strong>
               </span>
           @endif
+          <div class="invalid-feedback">
+              {{-- javascript --}}
+          </div>
         </div>
         <div class="form-check">
           <label class="form-check-label">
@@ -105,4 +111,5 @@
     <!-- ACA TERMINA LA COLUMNA DERECHA DE LA PANTALLA (FORM)-->
   </div>
 </div>
+<script src="js/login.js"></script>
 @endsection

@@ -75,7 +75,7 @@
               <div class="col">
                 <label><h6>Pais:</h6></label>
                 <select id="inputState" class="form-control" name="pais" value="{{Auth::user()->country}}" disabled>
-                    
+                  
                 </select>
                 <div class="invalid-feedback">
                 </div>
@@ -134,5 +134,6 @@
   </div><!--/tab-content-->
 
 <!-- TERMINA SECCION DE PERFIL -->
+<script src="js/paises.js"></script>
 
 @endsection

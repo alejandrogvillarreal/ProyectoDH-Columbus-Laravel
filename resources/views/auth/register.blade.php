@@ -143,6 +143,9 @@
                     <strong>{{ $errors->first('name') }}</strong>
                 </span>
             @endif
+            <div class="invalid-feedback">
+              {{-- javascript --}}
+            </div>
           </div>
           <div class="col">
             <label>Apellido</label>
@@ -151,7 +154,11 @@
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('lastname') }}</strong>
                 </span>
+                
             @endif
+            <div class="invalid-feedback">
+              {{-- javascript --}}
+            </div>
           </div>
         </div>
       </div>
@@ -165,6 +172,9 @@
                       <strong>{{ $errors->first('username') }}</strong>
                   </span>
               @endif
+              <div class="invalid-feedback">
+              {{-- javascript --}}
+              </div>
             </div>
             <div class="col">
               <label>Pais de Nacimiento</label>
@@ -194,6 +204,9 @@
                   <strong>{{ $errors->first('email') }}</strong>
               </span>
           @endif
+              <div class="invalid-feedback">
+              {{-- javascript --}}
+              </div>
         </div>
         <div class="form-group">
           <div class="form-row">
@@ -206,6 +219,9 @@
                       <strong>{{ $errors->first('password') }}</strong>
                   </span>
               @endif
+              <div class="invalid-feedback">
+              {{-- javascript --}}
+              </div>
             </div>
             <div class="col">
               <label>Repetir Contraseña</label>
@@ -215,6 +231,9 @@
                       <strong>{{ $errors->first('confirmPassword') }}</strong>
                   </span>
                 @endif
+                <div class="invalid-feedback">
+              {{-- javascript --}}
+                </div>
             </div>
           </div>
         </div>
@@ -250,5 +269,6 @@
   </div>
 </div>
 <script src="js/paises.js"></script>
+<script src="js/registro.js"></script>
 
 @endsection

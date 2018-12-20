@@ -4,9 +4,9 @@
 
 @section('content')
 
-	<h2 class="mt-2">Editar producto: "{{ $product->name }}"</h2>
-	<img src="{{ Storage::url('products/' . $product->image) }}" width="150">
+	<h2 class="col-md-12 mt-3">Editar producto: "{{ $product->name }}"</h2>
 
+		<img class="img-fluid img-thumbnail rounded d-block shadow-lg mb-3 mt-3" src="{{ Storage::url('products/' . $product->image) }}">
 <form action="/product/{{$product->id}}/update" method="POST" enctype="multipart/form-data">
 		@csrf
 		{{ method_field('PUT') }}

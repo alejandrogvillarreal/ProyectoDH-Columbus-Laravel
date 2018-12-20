@@ -99,7 +99,7 @@ window.onload = function(){
             }
         });
         console.log(elementos);
-        alert("Error en algun campo");
+        // alert("Error en algun campo");
       }
     });
 

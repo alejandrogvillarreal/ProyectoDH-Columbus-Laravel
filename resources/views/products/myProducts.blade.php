@@ -31,7 +31,7 @@
         <td>{{$oneProduct->brand->name}}</td>
         <td>{{$oneProduct->stock}}</td>
         <td>{{$oneProduct->category->name}}</td>
-        <td><a href="/product/{{$oneProduct->id}}/edit" class="btn btn-warning">Editar</a></td>
+        <td><a href="/product/{{$oneProduct->id}}/edit" class="btn btn-warning" id="color-german">Editar</a></td>
           <td>
               <form action="/product/{{$oneProduct->id}}/destroy" method="post">
                 @csrf
