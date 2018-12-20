@@ -23,27 +23,35 @@ Route::get('/faq', 'FaqController@index');
 
 Route::get('/contact', 'ContactController@index');
 
-Route::get('/profile', 'ProfileController@index');
-
-Route::get('/product', 'ProductController@index');
-
-Route::get('/product/create', 'ProductController@create');
-
-Route::post('/product/store', 'ProductController@store');
-
-Route::get('/cart', 'CartController@index');
-
-Route::get('/product/{id}', 'ProductController@show');
-
-Route::put('/product/{id}', 'ProductController@update');
-// Route::delete('/products/{id}', 'ProductsController@destroy');
-Route::get('/product/{id}/edit', 'ProductController@edit');
-
-
 Route::get('/categories', 'CategoryController@index');
 
 Route::get('/men', 'MenController@index');
 
+Route::get('/product', 'ProductController@index');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::middleware('auth')->group(function ()
+{
+    Route::get('/profile', 'ProfileController@index');
+    
+    Route::get('/cart', 'CartController@index');
+
+    Route::get('/product/create', 'ProductController@create');
+
+    Route::post('/product/store', 'ProductController@store');
+
+    Route::get('/product/edit', 'ProductController@indexEdit');
+
+    Route::get('/product/{id}/edit', 'ProductController@edit');
+    
+    Route::put('/product/{id}/update', 'ProductController@update');
+
+    Route::delete('/product/{id}/destroy', 'ProductController@destroy');
+
+});
+
+    Route::get('/product/{id}', 'ProductController@show');
+

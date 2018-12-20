@@ -1,14 +1,15 @@
 @extends('template.base')
 
-@section('title', 'Crear')
+@section('title', 'Editar')
 
 @section('content')
 
-	<h2>Editar "{{ $product->name }}"</h2>
+	<h2 class="mt-2">Editar producto: "{{ $product->name }}"</h2>
 	<img src="{{ Storage::url('products/' . $product->image) }}" width="150">
 
-	<form action="/product/{id}/update" method="POST" enctype="multipart/form-data">
+<form action="/product/{{$product->id}}/update" method="POST" enctype="multipart/form-data">
 		@csrf
+		{{ method_field('PUT') }}
 		<div class="row">
 			<div class="col-6">
 				<div class="form-group">
@@ -128,7 +129,7 @@
 			</div>
 		</div>
 
-		<button type="submit" class="btn btn-success">Subir</button>
+		<button type="submit" class="btn btn-success">Guardar cambios</button>
 	</form>
 
 @endsection

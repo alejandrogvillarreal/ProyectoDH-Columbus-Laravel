@@ -24,7 +24,7 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-			'name' => 'required | alpha |' ,
+			'name' => 'required | string |' ,
             'price' => 'required | numeric | min:100.00 | max:9999.99',
             'color' => 'required | integer |',
 			'stock' => 'required | numeric | min:1 | max:25',                                  
@@ -38,7 +38,7 @@ class ProductRequest extends FormRequest
 	{
 		return [
 			'required' => 'El campo es obligatorio',
-			'name.alpha' => 'El nombre solo admite letras',
+			'name.string' => 'El nombre solo admite letras',
 			'price.numeric' => 'El precio solo admite números',
 			'price.min' => 'El precio mínimo es 100.00',
             'price.max' => 'El precio máximo es 9999.99',

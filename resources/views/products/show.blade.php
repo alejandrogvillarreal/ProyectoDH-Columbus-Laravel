@@ -68,10 +68,12 @@
             <span class="label label-primary">{{$product->category->name}}</span>
             {{-- <span class="">Nro. 1960140180</span> --}}
               <p class="description">
-               Stock: {{$product->stock}}
-
+                Stock: {{$product->stock}}
               </p>
-            <h2 class="product-price">{{$product->price}}</h2>
+              <p class="description">
+                Marca: {{$product->brand->name}}
+              </p>
+            <h2 class="product-price">${{$product->price}}</h2>
             <hr>
             <div>
                 <div class="form-group">
@@ -99,7 +101,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="cart.html" class="btn btn-success btn-lg btn-block text-uppercase" id="color-german">Agregar al carrito</a>
+                <a href="/cart" class="btn btn-success btn-lg btn-block text-uppercase" id="color-german">Agregar al carrito</a>
             </div>
         </div>
     </div>

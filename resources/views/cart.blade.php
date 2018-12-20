@@ -23,11 +23,11 @@
           <td class="col-sm-8 col-md-6">
           <div class="media">
             <a class="thumbnail pull-left" href="#">
-              <img class="media-object mr-3" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;">
+              <img class="media-object mr-3" src="" style="width: 72px; height: 72px;">
             </a>
             <div class="media-body my-auto">
-              <h4 class="media-heading"><a href="producto.php">Remera</a></h4>
-              <h5 class="media-heading">Marca: <a href="producto.php">RipCurl</a></h5>
+              <h4 class="media-heading"><a href="">Remera</a></h4>
+              <h5 class="media-heading">Marca: <a href="">RipCurl</a></h5>
               <!-- <span>Stock: </span><span class="text-success"><strong>En Stock</strong></span> -->
             </div>
           </div>

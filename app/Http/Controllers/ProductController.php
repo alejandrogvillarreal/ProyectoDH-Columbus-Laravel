@@ -57,7 +57,7 @@ class ProductController extends Controller
 
         $product->user_id = Auth::user()->id;
         $product->save();
-        return redirect('/');
+        return redirect('/product');
     }
 
     /**
@@ -78,6 +78,14 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+     public function indexEdit()
+    {
+        $product = \App\Product::all();
+		return view('products.myProducts')->with(compact('product'));
+		
+    }
+
     public function edit($id)
     {
         $user_id = Auth::user()->id;
@@ -87,9 +95,9 @@ class ProductController extends Controller
         $categories = \App\Category::all();
         $subcategories = \App\Subcategory::all();
 
-        // if ($user_id == $product->user_id) {
+        if ($user_id == $product->user_id) {
 			return view('products.edit')->with(compact('product', 'brands', 'categories', 'colors', 'subcategories'));
-		// }
+		}
     }
 
     /**
@@ -117,7 +125,7 @@ class ProductController extends Controller
 
         $product->user_id = Auth::user()->id;
         $product->save();
-        return redirect('/');
+        return redirect()->route('products.edit');
     }
 
     /**
@@ -130,6 +138,6 @@ class ProductController extends Controller
     {
         $product = \App\Product::find($id);
     		$product->delete();
-    		return redirect('');
+    		return redirect('/product');
     }
 }
