@@ -47,11 +47,13 @@ Route::middleware('auth')->group(function ()
 
     Route::get('/product/{id}/edit', 'ProductController@edit');
     
-    Route::put('/product/{id}/update', 'ProductController@update');
+    // Route::put('/product/{id}/update', 'ProductController@update');
 
     Route::delete('/product/{id}/destroy', 'ProductController@destroy');
 
 });
+
+    Route::resource('/product', 'ProductController')->except(['create', 'destroy', 'edit', 'store', 'indexEdit']);
 
     Route::get('/product/{id}', 'ProductController@show');
 
