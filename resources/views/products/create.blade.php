@@ -109,9 +109,18 @@
 							</div>
 						@endforeach
 				</div>
+			</div>
+			<div class="col-6">
 				<div class="form-group">
-					<label for="">Stock</label>
-					<input type="text" id="stock" name="stock">
+					<label for="stock">Stock:</label>
+					<input type="text" id="stock" name="stock"
+						class="form-control {{ $errors->has('stock') ? 'is-invalid' : null }}"
+					>
+				
+					</select>
+					<span class="invalid-feedback">
+						{{ $errors->has('stock') ? $errors->first('stock') : null}}
+					</span>
 				</div>
 			</div>
 			<div class="col-6">

@@ -100,6 +100,8 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Compras </a>
                         <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="product/create">Subir producto</a>
+                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/logout"
                         onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();"

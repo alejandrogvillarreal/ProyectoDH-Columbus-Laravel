@@ -16,7 +16,7 @@ class ProductController extends Controller
     {
         //
         $products = \App\Product::all();
-        return view('products.index')->with(compact('products'));
+        return view('categorias')->with(compact('products'));
     }
 
     /**
@@ -40,7 +40,7 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
         $product = new \App\Product;
         $product->name = $request->input('name');
@@ -52,7 +52,7 @@ class ProductController extends Controller
         $product->brand_id = $request->input('brand_id');
 
     	$productImage = $request->file('image');
-		$imageName = uniqid("product_img_") . "." . $productImage->extension();    		$productImage->storePubliclyAs("public/products", $imageName);
+		$imageName = uniqid("product_img_") . "." . $productImage->extension(); $productImage->storePubliclyAs("public/products", $imageName);
         $product->image = $imageName;
 
         $product->user_id = Auth::user()->id;
@@ -68,8 +68,8 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-		    $product = \App\Product::find($id);
-		    return view('products.show')->with(compact('product'));
+	    $product = \App\Product::find($id);
+		return view('products.show')->with(compact('product'));
     }
 
     /**

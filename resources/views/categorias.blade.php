@@ -54,7 +54,7 @@
                             <img class="card-img-top" src="images/ropa/Hombre/Buzos/buzo-1.jpg" alt="Card image cap">
                           </a>
                           <div class="card-body shadow-lg">
-                              <h4 class="card-title"><a href="producto.php" class="card-link text-dark" title="View Product">Nombre del producto</a></h4>
+                          <h4 class="card-title"><a href="" class="card-link text-dark" title="View Product">Nombre del producto</a></h4>
                               <p class="card-text text-secondary">Breve descripción.</p>
                               <div class="row">
                                   <div class="col">

@@ -24,8 +24,10 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-			'name' => 'required | alpha',
-			'price' => 'required | numeric | min:100.00 |max:999.99',
+			'name' => 'required | alpha |' ,
+            'price' => 'required | numeric | min:100.00 | max:9999.99',
+            'color' => 'required | integer |',
+			'stock' => 'required | numeric | min:1 | max:25',                                  
 			'category_id' => 'required | integer',
 			'brand_id' => 'required | integer',
 			'image' => 'required | image',
@@ -36,10 +38,13 @@ class ProductRequest extends FormRequest
 	{
 		return [
 			'required' => 'El campo es obligatorio',
-			'name.alpha' => 'El campo nombre solo admite letras',
-			'price.numeric' => 'El campo precio solo admite números',
-			'price.min' => 'El precio mínimo es 10',
-			'price.max' => 'El precio máximo es 999.99',
+			'name.alpha' => 'El nombre solo admite letras',
+			'price.numeric' => 'El precio solo admite números',
+			'price.min' => 'El precio mínimo es 100.00',
+            'price.max' => 'El precio máximo es 9999.99',
+            'stock.numeric' => 'El valor de stock debe ser numerico',
+            'stock.min' => 'El valor de stock minimo es de 1',
+            'stock.max' => 'El valor de stock maximo es de 25',
 		];
 	}
 }

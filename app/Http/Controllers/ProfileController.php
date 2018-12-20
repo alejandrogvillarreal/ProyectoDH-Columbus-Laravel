@@ -69,7 +69,14 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $profile = \App\Product::find($id);
+        $profile->name = $request->input('name');
+        $profile->lastname = $request->input('lastname');
+		$profile->image = $request->input('image');
+        $profile->username = $request->input('username');
+        $profile->country = $request->input('country');
+
+        return redirect()->route('profile');
     }
 
     /**

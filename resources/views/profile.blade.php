@@ -39,7 +39,7 @@
         <button class="btn btn-info float-right" type="submit" id="botonEditar">Editar Perfil</button>
         <br>
         <br>
-        <form class="form perfil-form clearfix" action="" method="post" id="registrationForm" enctype="multipart/form-data">
+        <form class="form perfil-form clearfix" action="/profile/{id}/update" method="post" id="registrationForm" enctype="multipart/form-data">
           <!-- <h6>Subí tu foto...</h6>
           <div class="custom-file form-group">
             <label>Avatar</label>
@@ -50,14 +50,14 @@
           <div class="form-group">
             <div class="form-row">
               <div class="col">
-                <label><h6>Nombre:</h6></label>
-                <input type="text" class="form-control" name="nombre" value="" disabled>
+                <label><h6>Nombre: </h6></label>
+              <input type="text" class="form-control" name="nombre" value="{{Auth::user()->name}}" disabled>
                 <div class="invalid-feedback">
                 </div>
               </div>
               <div class="col">
                 <label><h6>Apellido:</h6></label>
-                <input type="text" class="form-control" name="apellido" value="" disabled>
+                <input type="text" class="form-control" name="apellido" value="{{Auth::user()->lastname}}" disabled>
                 <div class="invalid-feedback">
                 </div>
               </div>
@@ -68,16 +68,14 @@
             <div class="form-row">
               <div class="col">
                 <label><h6>Nombre de Usuario:</h6></label>
-                <input type="text" class="form-control" name="username" value="" disabled>
+                <input type="text" class="form-control" name="username" value="{{Auth::user()->username}}" disabled>
                 <div class="invalid-feedback">
                 </div>
               </div>
               <div class="col">
                 <label><h6>Pais:</h6></label>
-                <select id="inputState" class="form-control" name="pais" value="" disabled>
-                    <option value="">ALE</option>
-                    <option value="">BLA BLA</option>
-                    <option value="">BLA BLA BLA</option>
+                <select id="inputState" class="form-control" name="pais" value="{{Auth::user()->country}}" disabled>
+                    
                 </select>
                 <div class="invalid-feedback">
                 </div>
@@ -88,7 +86,7 @@
           <div class="form-group">
             <div class="col-xs-6">
               <label><h6>Email:</h6></label>
-              <input type="email" class="form-control" name="email" value="" disabled>
+              <input type="email" class="form-control" name="email" value="{{Auth::user()->email}}" disabled>
               <div class="invalid-feedback">
               </div>
             </div>
