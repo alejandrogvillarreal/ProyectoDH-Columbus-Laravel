@@ -1,6 +1,6 @@
 @extends('template.base')
 
-@section('title','remeras')
+@section('title','blusas')
 
 @section('content')
 
@@ -8,7 +8,7 @@
               <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
                       <li class="breadcrumb-item"><a href="/home">Inicio</a></li>
-                      <li class="breadcrumb-item"><a href="">Remeras</a></li>
+                      <li class="breadcrumb-item"><a href="">Blusas</a></li>
                       <li class="breadcrumb-item"><a href="/product">Ver todos los productos</a></li>
                   </ol>
               </nav>
@@ -72,7 +72,7 @@
                         @empty
             @endforelse
                         <div class="col-12 justify-content-center">
-                        </div>       
+                        </div>     
                     </div>
   </div>
 

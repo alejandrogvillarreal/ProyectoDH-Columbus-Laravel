@@ -23,7 +23,7 @@ Route::get('/faq', 'FaqController@index');
 
 Route::get('/contact', 'ContactController@index');
 
-Route::get('/categories', 'CategoryController@index');
+Route::get('/categories/{id}', 'CategoryController@index');
 
 Route::get('/men', 'MenController@index');
 
