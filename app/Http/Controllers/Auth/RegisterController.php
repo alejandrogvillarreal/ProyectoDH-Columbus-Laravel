@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/profile';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -57,7 +57,7 @@ class RegisterController extends Controller
             'country' => ['required'],
             'password' => 'required | string | min:6 | same:confirmPassword',
             'confirmPassword' => ['min:6', 'same:password'],
-            'imageProfile' => ['string', 'min:30', 'image'],
+            'image' => ['string', 'min:30', 'image'],
         ],
         [
             'required' => 'El campo es obligatorio',
@@ -74,7 +74,7 @@ class RegisterController extends Controller
             'password.min' => 'La contrasena debe ser de al menos 6 caracteres',
             'confirmPassword.min' => 'La contrasena debe ser de al menos 6 caracteres',
             'same' => 'La contrasena debe coincidir',
-            'imageProfile.image' => 'Tiene que ser un formato valido',
+            'image.image' => 'Tiene que ser un formato valido',
         ]);
     }
 
@@ -91,6 +91,7 @@ class RegisterController extends Controller
             'lastname' => $data['lastname'],
             'username' => $data['username'],
             'country' => $data['country'],
+            // 'image' => $data['image'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);

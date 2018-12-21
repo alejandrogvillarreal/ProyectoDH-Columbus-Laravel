@@ -41,7 +41,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 mb-5">
+    <div class="col-md-12 mb-5 mt-3">
       <h1 class="text-center">Categorias</h1>
       <hr>
     </div>
@@ -58,7 +58,7 @@
     <div class="d-flex flex-wrap justify-content-around">
       <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 zoom mb-4">
         <h5 class="text-center">Sandalias</h5>
-        <a href="categorias.php">
+        <a href="categories/1">
           <img class="mx-auto d-block shadow-lg rounded" src="images/ropa/Mujer/Categorias/sandalias.jpg" alt="Sandalias" />
         </a>
 
@@ -66,7 +66,7 @@
 
       <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 zoom mb-4">
         <h5 class="text-center">Remeras</h5>
-        <a href="categorias.php">
+        <a href="categories/3">
           <img class="mx-auto d-block shadow-lg rounded" src="images/ropa/Mujer/Categorias/remeras.jpg" alt="Remeras" />
         </a>
 
@@ -74,7 +74,7 @@
 
       <!-- <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 zoom mb-4">
         <h5 class="text-center">Camperas</h5>
-        <a href="categorias.php">
+        <a href="categories/1">
           <img class="mx-auto d-block shadow-lg rounded zoom" src="https://dafitistaticar-a.akamaihd.net/cms/promo_750ndu_170718.jpg" alt="Camperas" />
         </a>
 
@@ -82,7 +82,7 @@
 
       <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 zoom mb-4">
         <h5 class="text-center">Pantalones</h5>
-        <a href="categorias.php">
+        <a href="categories/7">
           <!-- <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/1009-onsitemasc-camisasjeanspant-25offextra.jpg" alt="Pantalones" /> -->
           <img class="mx-auto d-block shadow-lg rounded" src="images/ropa/Mujer/Categorias/pantalones.jpg" alt="Pantalones" />
         </a>
@@ -91,7 +91,7 @@
 
       <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 zoom mb-4">
         <h5 class="text-center">Camisas</h5>
-        <a href="categorias.php">
+        <a href="categories/2">
           <img class="mx-auto d-block shadow-lg rounded" src="images/ropa/Mujer/Categorias/camisas.jpg" alt="Camisas" />
         </a>
 
@@ -99,7 +99,7 @@
 
       <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 zoom mb-4">
         <h5 class="text-center">Blusas</h5>
-        <a href="categorias.php">
+        <a href="categories/8">
           <img class="mx-auto d-block shadow-lg rounded" src="images/ropa/Mujer/Categorias/blusas.jpg" alt="Blusas" />
         </a>
 
@@ -107,7 +107,7 @@
 
       <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 zoom mb-4">
         <h5 class="text-center">Vestidos</h5>
-        <a href="categorias.php">
+        <a href="categories/9">
           <img class="mx-auto d-block shadow-lg rounded" src="images/ropa/Mujer/Categorias/vestidos.jpg" alt="Vestidos" />
         </a>
 
@@ -127,7 +127,7 @@
       <div class="d-flex flex-wrap justify-content-around">
         <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 zoom mb-4">
           <h5 class="text-center">Pantalones</h5>
-          <a href="categorias.php">
+          <a href="categories/7">
             <!-- <img class="mx-auto d-block" src="https://dafitistaticar-a.akamaihd.net/cms/1009-onsitemasc-camisasjeanspant-25offextra.jpg" alt="Pantalones" /> -->
             <img class="mx-auto d-block shadow-lg rounded zoom" src="images/ropa/Hombre/Categorias/pantalones.jpg" alt="Pantalones" />
           </a>
@@ -136,7 +136,7 @@
 
         <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 zoom mb-4">
           <h5 class="text-center">Camisas</h5>
-          <a href="categorias.php">
+          <a href="categories/2">
             <img class="mx-auto d-block shadow-lg rounded zoom" src="images/ropa/Hombre/Categorias/camisas.jpg" alt="Camisas" />
           </a>
 
@@ -144,7 +144,7 @@
 
         <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 zoom mb-4">
           <h5 class="text-center">Zapatillas</h5>
-          <a href="categorias.php">
+          <a href="categories/4">
             <img class="mx-auto d-block shadow-lg rounded zoom" src="images/ropa/Hombre/Categorias/zapatillas.jpg" alt="Zapatillas" />
           </a>
 
@@ -152,7 +152,7 @@
 
         <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 zoom mb-4">
           <h5 class="text-center">Buzos</h5>
-          <a href="categorias.php">
+          <a href="categories/6">
             <img class="mx-auto d-block shadow-lg rounded zoom" src="images/ropa/Hombre/Categorias/buzos.jpg" alt="Buzos" />
           </a>
 
@@ -160,7 +160,7 @@
 
         <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 zoom mb-4">
           <h5 class="text-center">Remeras</h5>
-          <a href="categorias.php">
+          <a href="categories/3">
             <img class="mx-auto d-block shadow-lg rounded zoom" src="images/ropa/Hombre/Categorias/remeras.jpg" alt="Remeras" />
           </a>
 

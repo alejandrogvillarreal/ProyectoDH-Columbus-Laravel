@@ -31,28 +31,6 @@ lightButton.addEventListener("click", function () {
 
 });
 
-//TEMA COOL
-let coolButton = document.getElementById("cool");
-
-coolButton.addEventListener("click", function () {
-
-  let body = document.querySelector("body");
-  let nav = document.querySelector("nav");
-  let temaBodyClase = 'cool'
-  let temaNavColor = 'navbar navbar-expand-lg navbar-german bg-german';
-
-  localStorage.setItem("temaBody", temaBodyClase);
-  sessionStorage.setItem("temaBody", temaBodyClase);
-
-  localStorage.setItem("temaNav", temaNavColor);
-  sessionStorage.setItem("temaNav", temaNavColor);
-
-  body.className = temaBodyClase;
-  
-  nav.className = temaNavColor;
-
-});
-
 //TEMA RELAX
 let relaxButton = document.getElementById("relax");
 
@@ -74,3 +52,25 @@ relaxButton.addEventListener("click", function () {
   nav.className = temaNavColor;
 
 });
+
+//TEMA COOL
+// let coolButton = document.getElementById("cool");
+
+// coolButton.addEventListener("click", function () {
+
+//   let body = document.querySelector("body");
+//   let nav = document.querySelector("nav");
+//   let temaBodyClase = 'cool'
+//   let temaNavColor = 'navbar navbar-expand-lg navbar-german bg-german';
+
+//   localStorage.setItem("temaBody", temaBodyClase);
+//   sessionStorage.setItem("temaBody", temaBodyClase);
+
+//   localStorage.setItem("temaNav", temaNavColor);
+//   sessionStorage.setItem("temaNav", temaNavColor);
+
+//   body.className = temaBodyClase;
+
+//   nav.className = temaNavColor;
+
+// });

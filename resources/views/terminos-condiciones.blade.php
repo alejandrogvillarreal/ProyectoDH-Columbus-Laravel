@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="col-12">
+<div class="col-12 mt-3">
   <h1>Columbus</h1>
   <br>
   <h2>Términos de uso del sitio web</h2>

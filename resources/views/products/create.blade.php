@@ -1,10 +1,10 @@
 @extends('template.base')
 
-@section('title', 'Crear')
+@section('title', 'Subir producto')
 
 @section('content')
 
-	<h2>Subir producto</h2>
+	<h2 class="mt-3">Subir producto</h2>
 
 	<form action="/product/store" method="post" enctype="multipart/form-data">
 		@csrf
@@ -142,5 +142,17 @@
 
 		<button type="submit" class="btn btn-success">Subir</button>
 	</form>
-
+	
+				<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+				<script>
+					
+            $('#image').on('change',function(){
+                //get the file name
+                var fileName = $(this).val();
+                //replace the "Choose a file" label
+                $(this).next('.custom-file-label').html(fileName);
+            })
+        </script>
 @endsection

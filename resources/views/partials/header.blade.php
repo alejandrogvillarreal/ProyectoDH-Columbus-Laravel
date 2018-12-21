@@ -34,25 +34,28 @@
                         <a class="dropdown-item link-german" href="/product">Todos</a>
                       <!-- CATEGORIA DE HOMBRES -->
                       <li class="dropdown-submenu">
-                        <a class="dropdown-item link-german" href="/men">Hombres</a>
+                        <a class="dropdown-item link-german" href="/product">Hombres</a>
                         <ul class="dropdown-menu">
                           <li>
-                            <a class="dropdown-item link-german" href="/categories">Buzos</a>
-                            <a class="dropdown-item link-german" href="/categories">Remeras</a>
-                            <a class="dropdown-item link-german" href="/categories">Camisas</a>
-                            <a class="dropdown-item link-german" href="/categories">Jeans</a>
+                            <a class="dropdown-item link-german" href="/categories/6">Buzos</a>
+                            <a class="dropdown-item link-german" href="/categories/3">Remeras</a>
+                            <a class="dropdown-item link-german" href="/categories/2">Camisas</a>
+                            <a class="dropdown-item link-german" href="/categories/7">Pantalones</a>
+                            <a class="dropdown-item link-german" href="/categories/4">Zapatillas</a>
                           </li>
                         </ul>
                       </li>
                       <!-- CATEGORIA DE MUJERES -->
                       <li class="dropdown-submenu">
-                        <a class="dropdown-item link-german" href="/women">Mujeres</a>
+                        <a class="dropdown-item link-german" href="/product">Mujeres</a>
                         <ul class="dropdown-menu">
                           <li>
-                            <a class="dropdown-item link-german" href="/categories">Blusas</a>
-                            <a class="dropdown-item link-german" href="/categories">Pantalones</a>
-                            <a class="dropdown-item link-german" href="/categories">Camisas</a>
-                            <a class="dropdown-item link-german" href="/categories">Vestidos</a>
+                            <a class="dropdown-item link-german" href="/categories/1">Sandalias</a>
+                            <a class="dropdown-item link-german" href="/categories/8">Blusas</a>
+                            <a class="dropdown-item link-german" href="/categories/7">Pantalones</a>
+                            <a class="dropdown-item link-german" href="/categories/2">Camisas</a>
+                            <a class="dropdown-item link-german" href="/categories/9">Vestidos</a>
+                            <a class="dropdown-item link-german" href="/categories/4">Zapatillas</a>
                           </li>
                         </ul>
                       </li>
@@ -99,8 +102,8 @@
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item link-german" href="/profile">Perfil de {{ Auth::user()->name }}</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item link-german" href="#">Compras </a>
-                        <div class="dropdown-divider"></div>
+                        {{-- <a class="dropdown-item link-german" href="#">Compras </a> --}}
+                        {{-- <div class="dropdown-divider"></div>  --}}
                         <a class="dropdown-item link-german" href="/product/create">Subir producto</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item link-german" href="/product/edit">Mis productos</a>
@@ -119,13 +122,13 @@
                   </ul>
                 </li>
                 <!-- <li class="nav-item my-auto" style="margin-right: -60px;"> -->
-                <li class="nav-item my-auto">
+                {{-- <li class="nav-item my-auto">
                   <!-- <a class="btn btn-success btn-sm" href="carrito.php"> -->
                   <a class="btn btn-sm" href="/cart"  style="background-color:#ABB2B9;">
                       <!--<i class="fa fa-shopping-cart"></i>--> <!-- Carrito --><img src="/images/carrito.png">
                       <span class="badge badge-light">3</span>
                   </a>
-                </li>
+                </li> --}}
                 <!-- SI EL USUARIO NO ESTA LOGUEADO LE MUESTRO -->
                 <!-- LA SEPARACION DEL MENU ESTA HECHA CON ml-5 -->
                 {{-- <li class="nav-item">

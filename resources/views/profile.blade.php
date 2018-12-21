@@ -12,7 +12,7 @@
 <!-- SECCION DE PERFIL -->
 
   <div class="container">
-    <h1 class="text-center">Perfil</h1>
+    <h1 class="text-center mt-3">Perfil</h1>
     <hr>
     <div class="row">
       <!-- ACA EMPIEZA LA SECCION DE LA IZQUIERDA DE LA PANTALLA (FOTO) -->
@@ -22,13 +22,13 @@
           {{-- <img src="images/avatars/" class="avatar img-circle img-thumbnail shadow-lg" alt="avatar"> --}}
 
           <div class="text-danger font-weight-bold">
-            <ul>
+            {{-- <ul> --}}
               {{-- FOREACH --}}
-                <li>
+                {{-- <li> --}}
                   {{-- ACA IRIAN LOS ERRORES --}}
-                </li>
+                {{-- </li> --}}
 
-            </ul>
+            {{-- </ul> --}}
           </div>
         </div>
       </div><!--/col-3-->
@@ -36,10 +36,12 @@
 
       <!-- ACA EMPIEZA LA SECCION DE LA DERECHA DE LA PANTALLA (DATOS) -->
       <div class="col-sm-9">
-        <button class="btn btn-info float-right" type="submit" id="botonEditar">Editar Perfil</button>
+        {{-- <button class="btn btn-info float-right" type="submit" id="botonEditar">Editar Perfil</button> --}}
         <br>
         <br>
-        <form class="form perfil-form clearfix" action="/profile/{id}/update" method="post" id="registrationForm" enctype="multipart/form-data">
+      <form class="form perfil-form clearfix" action="/profile/{{Auth::user()->id}}/update" method="post" id="registrationForm" enctype="multipart/form-data">
+          @csrf
+	        	{{ method_field('PUT') }}
           <!-- <h6>Subí tu foto...</h6>
           <div class="custom-file form-group">
             <label>Avatar</label>
@@ -134,6 +136,6 @@
   </div><!--/tab-content-->
 
 <!-- TERMINA SECCION DE PERFIL -->
-<script src="js/paises.js"></script>
+{{-- <script src="js/paises.js"></script> --}}
 
 @endsection

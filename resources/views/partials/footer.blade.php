@@ -51,8 +51,7 @@
           </p>
           <button class="btn btn-secondary" id="light"></button>
           <button class="btn btn-light" id="relax"></button>
-          <!-- <button class="btn btn-dark" id="dark">DARK</button> -->
-          <button class="btn btn-danger" id="cool"></button>
+          {{-- <button class="btn btn-danger" id="cool"></button> --}}
 
         </div>
         <!-- Grid column -->

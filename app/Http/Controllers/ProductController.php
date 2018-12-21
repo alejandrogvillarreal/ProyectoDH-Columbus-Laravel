@@ -125,7 +125,7 @@ class ProductController extends Controller
 
         $product->user_id = Auth::user()->id;
         $product->save();
-        return redirect()->route('products.edit');
+        return redirect()->route('/product');
     }
 
     /**

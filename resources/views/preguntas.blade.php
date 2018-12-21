@@ -5,7 +5,7 @@
 @section('content')
 
       <div class="col-md-12">
-        <h1 class="text-center">Preguntas Frecuentes</h1>
+        <h1 class="text-center mt-3">Preguntas Frecuentes</h1>
         <hr>
       </div>
       <!-- ACA EMPIEZA EL CONTENEDOR CENTRAL DE LA PANTALLA (PREGUNTAS)-->
@@ -84,7 +84,7 @@
 
 
             <!-- INICIO PREGUNTA -->
-            {{-- <div class="card shadow">
+            <div class="card shadow">
               <div class="card-header">
                 <div>
                   <a data-toggle="collapse" href="#preguntas4" aria-expanded="false" class="collapsed">
@@ -95,12 +95,12 @@
               <div id="preguntas4" class="collapse" aria-expanded="false">
                 <div class="card-block">
                   <p>
-                    <a href="">Hacé click Acá</a> para acceder a "Olvidé mi contraseña". Ingresá tu mail registrado para que te enviemos una nueva contraseña de acceso.
+                    <a href="{{ route('password.request') }}">Hacé click Acá</a> para acceder a "Olvidé mi contraseña". Ingresá tu mail registrado para que te enviemos una nueva contraseña de acceso.
                     Para tu seguridad, en lugar de enviarte tu contraseña anterior crearemos una nueva.
                   </p>
                 </div>
               </div>
-            </div> --}}
+            </div>
             <!-- FIN PREGUNTA -->
 
           </div>

@@ -36,8 +36,8 @@
 <div class="col-12">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-            <li class="breadcrumb-item"><a href="categorias.php">Categoria</a></li>
+            <li class="breadcrumb-item"><a href="/home">Home</a></li>
+            <li class="breadcrumb-item"><a href="/product">Ver todos los productos</a></li>
             <li class="breadcrumb-item active" aria-current="page">Producto</li>
         </ol>
     </nav>
@@ -50,10 +50,10 @@
 <div class="col-12 col-lg-6">
     <div class="card bg-light">
         <div class="card-body">
-            <a href="" data-toggle="modal" data-target="#productModal">
+            {{-- <a href="" data-toggle="modal" data-target="#productModal"> --}}
                 <!-- <img class="img-fluid" src="https://dummyimage.com/800x800/55595c/fff" /> -->
                 <img class="img-fluid img-thumbnail rounded mx-auto d-block shadow-lg" src="{{ Storage::url('products/' . $product->image)}}"/>
-            </a>
+            {{-- </a> --}}
         </div>
     </div>
 </div>
@@ -65,7 +65,7 @@
         <div class="card-body">
 
            <h1>{{$product->name}}</h1>
-            <span class="label label-primary">{{$product->category->name}}</span>
+            <span class="label label-primary">Categoria: {{$product->category->name}}</span>
             {{-- <span class="">Nro. 1960140180</span> --}}
               <p class="description">
                 Stock: {{$product->stock}}
@@ -90,7 +90,7 @@
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="">
-                                
+                                -
                             </button>
                         </div>
                         <input type="text" class="form-control"  id="quantity" name="quantity" min="1" max="100" value="1">
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="/cart" class="btn btn-success btn-lg btn-block text-uppercase" id="color-german">Agregar al carrito</a>
+                <a href="/cart" class="btn btn-success disabled btn-lg btn-block text-uppercase" id="color-german">Agregar al carrito</a>
             </div>
         </div>
     </div>

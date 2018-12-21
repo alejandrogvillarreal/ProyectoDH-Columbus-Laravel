@@ -25,7 +25,7 @@ Route::get('/contact', 'ContactController@index');
 
 Route::get('/categories/{id}', 'CategoryController@index');
 
-Route::get('/men', 'MenController@index');
+// Route::get('/men', 'MenController@index');
 
 Route::get('/product', 'ProductController@index');
 
@@ -36,6 +36,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware('auth')->group(function ()
 {
     Route::get('/profile', 'ProfileController@index');
+
+    // Route::put('/profile/{id}', 'ProfileController@update');
     
     Route::get('/cart', 'CartController@index');
 
@@ -47,13 +49,13 @@ Route::middleware('auth')->group(function ()
 
     Route::get('/product/{id}/edit', 'ProductController@edit');
     
-    // Route::put('/product/{id}/update', 'ProductController@update');
+    Route::put('/product/{id}/update', 'ProductController@update')->name('product.update');
 
     Route::delete('/product/{id}/destroy', 'ProductController@destroy');
 
 });
 
-    Route::resource('/product', 'ProductController')->except(['create', 'destroy', 'edit', 'store', 'indexEdit']);
+    Route::resource('/product', 'ProductController')->except(['create', 'destroy', 'edit', 'store', 'indexEdit', 'update']);
 
     Route::get('/product/{id}', 'ProductController@show');
 

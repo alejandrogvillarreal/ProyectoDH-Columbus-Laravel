@@ -84,7 +84,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h1 class="text-center">Registro</h1>
+      <h1 class="text-center mt-3">Registro</h1>
       <hr>
     </div>
 
@@ -189,8 +189,8 @@
                 <label id="provincia" style="display:none">Provincia</label>
                 <select id="provinciaSelect" style="display:none" class="form-control mt-2">
                 </select>
-                <div class="invalid-feedback">
-                </div>
+                {{-- <div class="invalid-feedback">
+                </div> --}}
               <span> <?php // echo $errorPais; ?></span>
             </div>
           </div>
@@ -239,11 +239,11 @@
         </div>
         <div class="custom-file form-group">
           <label>Avatar</label>
-          <input type="file" class="custom-file-input text-center center-block input-file-ale {{ $errors->has('imageProfile') ? ' is-invalid' : '' }}" id="imageProfile"  name="userPhoto">
-          <label class="custom-file-label text-left" for="imageProfile">Elegir</label>
-              @if ($errors->has('imageProfile'))
+          <input type="file" class="custom-file-input text-center center-block input-file-ale {{ $errors->has('image') ? ' is-invalid' : '' }}" id="image"  name="userPhoto">
+          <label class="custom-file-label text-left" for="image">Elegir</label>
+              @if ($errors->has('image'))
                 <span class="invalid-feedback" role="alert">
-                  <strong>{{ $errors->first('imageProfile') }}</strong>
+                  <strong>{{ $errors->first('image') }}</strong>
                 </span>
               @endif
           <span> <?php // echo $errorImg; ?></span>
@@ -268,7 +268,18 @@
       <!-- ACA TERMINA LA COLUMNA DERECHA DE LA PANTALLA (FORM)-->
   </div>
 </div>
-<script src="js/paises.js"></script>
-<script src="js/registro.js"></script>
-
+  <script src="js/paises.js"></script>
+  <script src="js/registro.js"></script>
+  {{-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script>
+            
+              $('#image').on('change',function(){
+                  //get the file name
+                  var fileName = $(this).val();
+                  //replace the "Choose a file" label
+                  $(this).next('.custom-file-label').html(fileName);
+              })
+  </script> --}}
 @endsection

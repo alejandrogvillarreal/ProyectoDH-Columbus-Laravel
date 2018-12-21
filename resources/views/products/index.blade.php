@@ -1,6 +1,6 @@
 @extends('template.base')
 
-@section('title','Todos')
+@section('title','Todos los productos')
 
 @section('content')
 
@@ -53,7 +53,7 @@
                         <div class="col-12 col-md-6 col-lg-4 mb-5">
                             <div class="card zoom">
                                 <a href="/product/{{$oneProduct->id}}">
-                                    <img class="card-img-top" src="{{ Storage::url('products/' . $oneProduct->image) ?? 'default.png' }}" alt="Ropa">
+                                    <img class="card-img-top" src="{{ Storage::url('products/' . $oneProduct->image) ?? 'default.png' }}" alt="Ropa" width="225" height="225">
                                 </a>
                                 <div class="card-body shadow-lg">
                                 <h5 class="card-title"><a href="/product/{{$oneProduct->id}}" class="card-link text-dark" title="View Product">{{ $oneProduct->name }}</a></h5>

@@ -56,9 +56,9 @@ class CategoryController extends Controller
                 return view('categorias.blusas')->with(compact('blusas', 'products','categories'));
                     break;
             case '9':
-                $products = \App\Product::where('category_id','=', '8')->get();
-                $blusas = \App\Category::find(8);
-                return view('categorias.blusas')->with(compact('blusas', 'products','categories'));
+                $products = \App\Product::where('category_id','=', '9')->get();
+                $vestidos = \App\Category::find(8);
+                return view('categorias.vestidos')->with(compact('vestidos', 'products','categories'));
                 break;
             default:
                 break;

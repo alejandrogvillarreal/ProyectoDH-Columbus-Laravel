@@ -4,7 +4,7 @@
 
 @section('content')
 
-<h2 class="mt-2">Mis productos</h2>
+<h2 class="mt-3">Mis productos</h2>
 <table class="table mt-4">
 
   <thead class="thead-dark">

@@ -27,7 +27,7 @@ class ProductRequest extends FormRequest
 			'name' => 'required | string |' ,
             'price' => 'required | numeric | min:100.00 | max:9999.99',
             'color' => 'required | integer |',
-			'stock' => 'required | numeric | min:1 | max:25',                                  
+			'stock' => 'required | numeric | min:0 | max:25',                                  
 			'category_id' => 'required | integer',
 			'brand_id' => 'required | integer',
 			'image' => 'required | image',
@@ -45,6 +45,7 @@ class ProductRequest extends FormRequest
             'stock.numeric' => 'El valor de stock debe ser numerico',
             'stock.min' => 'El valor de stock minimo es de 1',
             'stock.max' => 'El valor de stock maximo es de 25',
+            'image.image' => 'La imagen tiene que ser un formato valido',
 		];
 	}
 }

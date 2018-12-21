@@ -7,7 +7,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h1 class="text-center">Iniciar Sesion</h1>
+      <h1 class="text-center mt-3">Iniciar Sesion</h1>
       <hr>
     </div>
 
