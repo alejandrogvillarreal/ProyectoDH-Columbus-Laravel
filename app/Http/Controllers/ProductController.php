@@ -15,7 +15,7 @@ class ProductController extends Controller
     public function index()
     {
         $categories = \App\Category::all();
-        $products = \App\Product::paginate(15);
+        $products = \App\Product::paginate(9);
         return view('products.index')->with(compact('products', 'categories'));
     }
 
@@ -68,7 +68,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-	    $product = \App\Product::find($id);
+	    $product = \App\Product::findOrFail($id);
 		return view('products.show')->with(compact('product'));
     }
 

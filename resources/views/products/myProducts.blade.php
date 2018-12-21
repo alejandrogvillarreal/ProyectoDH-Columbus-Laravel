@@ -27,7 +27,7 @@
       <tr>
       <th scope="row">{{$oneProduct->id}}</th>
         <td>{{$oneProduct->name}}</td>
-        <td>{{$oneProduct->price}}</td>
+        <td>${{$oneProduct->price}}</td>
         <td>{{$oneProduct->brand->name}}</td>
         <td>{{$oneProduct->stock}}</td>
         <td>{{$oneProduct->category->name}}</td>
@@ -36,7 +36,7 @@
               <form action="/product/{{$oneProduct->id}}/destroy" method="post">
                 @csrf
                 {{ method_field('DELETE') }}
-                <button id="delete" type="submit" class="btn btn-danger">Delete</button>
+                <button id="delete" type="submit" class="btn btn-danger">Borrar</button>
               </form>
         </td>
       </tr>
